@@ -7,4 +7,6 @@ This will build the module within the modules/custom directory. It adds .info, .
 If your project doesn't use React, you can rename that. The generator establishes a settings form with admin links in the Drupal admin menu. The settings form has one field to set the ID of the DIV where the app will be embedded.
 Permissions for the settings form are also generated. A block is also generated that is simply a DIV for the app to be emedded into.  
 
-The libraries file assumes a React app, but this can be changed up after generation. For this to work, your react build files should output to the files defined in the library. This will require manually renaming and moving them after build, or setting up build scripts to do it for you.
+The libraries file assumes a React app, but this can be changed up after generation. For this to work, your react build files should output to the files defined in the library. This will require manually renaming and moving them after build, or setting up build scripts to do it for you.  
+
+Once you are done, you can uninstall and remove this module.
