@@ -1,0 +1,11 @@
+[[module_name]]:
+  version: 1.1
+  js:
+    js/runtime.js: {}
+    js/chunk.js: {}
+    js/main.js: {}
+  css:
+    layout:
+      css/chunk.css: {}
+  dependencies:
+    - core/drupal

@@ -1,0 +1,11 @@
+[[module_name]].admin_config:
+  title: [[name]]
+  description: 'Configure settings for [[name]].'
+  route_name: [[module_name]].admin_config
+  parent: system.admin_config
+[[module_name]].app_settings:
+  title: [[name]] Settings
+  description: 'Configure settings for [[name]].'
+  route_name: [[module_name]].app_settings
+  parent: [[module_name]].admin_config
+  weight: 1

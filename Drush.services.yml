@@ -1,0 +1,5 @@
+services:
+  embedded_block_generator.commands:
+    class: \Drupal\embedded_block_generator\Commands\EmbeddedBlockCommands
+    tags:
+      - { name: drush.command }

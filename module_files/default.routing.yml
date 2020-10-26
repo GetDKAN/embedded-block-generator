@@ -1,0 +1,16 @@
+[[module_name]].admin_config:
+  path: '/admin/config/[[module_name]]'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: [[name]]
+  requirements:
+    _permission: 'administer [[name]] app settings'
+[[module_name]].app_settings:
+   path: '/admin/config/[[module_name]]/app-settings'
+   defaults:
+     _form: '\Drupal\[[module_name]]\Form\[[form_name]]'
+     _title: '[[name]] App Settings'
+   requirements:
+     _permission: 'administer [[name]] app settings'
+   options:
+     _admin_route: TRUE

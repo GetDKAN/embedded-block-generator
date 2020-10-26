@@ -1,0 +1,7 @@
+# Package info
+name: Embedded Block Generator
+description: Simple module builder for applications embedded in blocks.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

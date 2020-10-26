@@ -1,0 +1,3 @@
+administer [[name]] settings:
+  title: 'Administer [[name]] settings'
+  description: 'Change custom settings specific to [[name]].'

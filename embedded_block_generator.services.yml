@@ -1,0 +1,4 @@
+services:
+  embedded_block_generator.setup_module:
+    class: Drupal\embedded_block_generator\SetupModule
+    arguments: ["@module_handler", "@file_system"]
