@@ -13,10 +13,10 @@ use Drupal\Core\File\FileSystemInterface;
 class EmbeddedBlockCommands extends DrushCommands {
 
   /**
-   * Drush command that displays the given text.
+   * Drush command that builds embedded app module.
    *
    * @param string $module_name
-   *   Argument with message to be displayed.
+   *   Name of the new module
    * @command EmbeddedBlockCommands:init
    * @aliases ebc-init
    * @usage EmbeddedBlockCommands:init module_name
