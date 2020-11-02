@@ -9,35 +9,35 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 
 /**
-* Class [[form_name]].
-*
-* @package Drupal\[[module_name]]\Form
-*/
+ * Class [[form_name]].
+ *
+ * @package Drupal\[[module_name]]\Form
+ */
 class [[form_name]] extends ConfigFormBase {
 
   /**
-  * The Drupal State service.
-  *
-  * @var \Drupal\Core\State\State
-  */
+   * The Drupal State service.
+   *
+   * @var \Drupal\Core\State\State
+   */
   protected $state;
 
   /**
-  * Constructs a [[form_name]] object.
-  *
-  * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-  *   The factory for configuration objects.
-  * @param \Drupal\Core\State\State $state
-  *   The Drupal State service.
-  */
+   * Constructs a [[form_name]] object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The factory for configuration objects.
+   * @param \Drupal\Core\State\State $state
+   *   The Drupal State service.
+   */
   public function __construct(ConfigFactoryInterface $config_factory, State $state) {
     parent::__construct($config_factory);
     $this->state = $state;
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
@@ -46,41 +46,41 @@ class [[form_name]] extends ConfigFormBase {
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function getFormId() {
     return '[[module_name]]_settings_form';
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   protected function getEditableConfigNames() {
     return ['[[module_name]].app_settings'];
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $form['div_id'] = [
-    '#type' => 'textfield',
-    '#title' => 'ID of div to embed into.',
-    '#default_value' => $this->config('[[module_name]].app_settings')->get('div_id') ?: '',
+      '#type' => 'textfield',
+      '#title' => 'ID of div to embed into.',
+      '#default_value' => $this->config('[[module_name]].app_settings')->get('div_id') ?: '',
     ];
 
     $form['submit'] = [
-    '#type' => 'submit',
-    '#value' => $this->t('Save settings'),
+      '#type' => 'submit',
+      '#value' => $this->t('Save settings'),
     ];
 
     return $form;
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     $this->config('[[module_name]].app_settings')->set('div_id', $form_state->getValue('div_id'))->save();
