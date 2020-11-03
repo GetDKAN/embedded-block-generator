@@ -21,32 +21,32 @@ use Drupal\Core\Cache\Cache;
 class [[block_name]] extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-  * The Config.
-  *
-  * @var \Drupal\Core\Config\ConfigFactoryInterface
-  */
+   * The Config.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
   protected $configFactory;
 
   /**
-  * Constructs a [[block_name]] object.
-  *
-  * @param array $configuration
-  *   The plugin configuration.
-  * @param string $plugin_id
-  *   The plugin id.
-  * @param mixed $plugin_definition
-  *   The plugin definition.
-  * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-  *   The config factory services.
-  */
+   * Constructs a [[block_name]] object.
+   *
+   * @param array $configuration
+   *   The plugin configuration.
+   * @param string $plugin_id
+   *   The plugin id.
+   * @param mixed $plugin_definition
+   *   The plugin definition.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory services.
+   */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->configFactory = $config_factory;
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
       $configuration,
@@ -57,8 +57,8 @@ class [[block_name]] extends BlockBase implements ContainerFactoryPluginInterfac
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function build() {
     $div_id = $this->configFactory->get('[[module_name]].app_settings')->get('div_id') ?? 'app';
 
@@ -66,9 +66,9 @@ class [[block_name]] extends BlockBase implements ContainerFactoryPluginInterfac
       '#type' => 'inline_template',
       '#template' => '<div id="' . $div_id . '"></div>',
       '#attached' => [
-//        'drupalSettings' => [
-//          'itemName' => 'itemValue',
-//        ],
+    // 'drupalSettings' => [
+    // 'itemName' => 'itemValue',
+    // ],
         'library' => [
         '[[module_name]]/[[module_name]]'
         ]
@@ -79,15 +79,15 @@ class [[block_name]] extends BlockBase implements ContainerFactoryPluginInterfac
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   protected function blockAccess(AccountInterface $account) {
     return AccessResult::allowedIfHasPermission($account, 'access content');
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function getCacheTags() {
     return Cache::mergeTags(parent::getCacheTags(), ['config:[[module_name]].app_settings']);
   }

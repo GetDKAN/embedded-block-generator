@@ -16,7 +16,7 @@ class EmbeddedBlockCommands extends DrushCommands {
    * Drush command that builds embedded app module.
    *
    * @param string $module_name
-   *   Name of the new module
+   *   Name of the new module.
    * @command EmbeddedBlockCommands:init
    * @aliases ebc-init
    * @usage EmbeddedBlockCommands:init module_name
@@ -34,6 +34,6 @@ class EmbeddedBlockCommands extends DrushCommands {
     catch (Exception $e) {
       $this->output()->writeln($e->getMessage());
     }
-
   }
+
 }
